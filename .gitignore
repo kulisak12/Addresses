@@ -1,0 +1,12 @@
+## Ignore VS Code settings files
+
+.vscode
+
+## Ignore testing input files
+
+*.vcf
+*.xls
+
+## Ignore NodeJS
+
+node_modules/
