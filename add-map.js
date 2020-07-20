@@ -32,12 +32,19 @@ function addMarker(markerLayer, name, geocoder) {
     }
 	var result = geocoder.getResults()[0].results[0];
 	
-	// create marker
+	// marker icon
+	var iconDiv = JAK.mel("div");
+	var icon = JAK.mel("img", {src: "control.png"});
+	iconDiv.appendChild(icon);
+	// marker description
 	var card = new SMap.Card();
 	card.getHeader().innerHTML = name;
 	var options = { 
-		title: name
+		title: name,
+		url: iconDiv
 	};
+
+	// create marker
 	var marker = new SMap.Marker(result.coords, false, options);
 	marker.decorate(SMap.Marker.Feature.Card, card);
 	markerLayer.addMarker(marker);
